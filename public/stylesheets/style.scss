@@ -1,7 +1,9 @@
 @import "compass/css3";
 
+// import semantic-UI
+@import "../semantic/semantic.min.css";
+
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #f5f5f5;
 }
@@ -9,3 +11,10 @@ body {
 a {
   color: #00B7FF;
 }
+
+.white {
+  background-color: #fff;
+}
+
+// header
+@import "header";

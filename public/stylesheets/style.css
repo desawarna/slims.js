@@ -1,9 +1,32 @@
+@import url(../semantic/semantic.min.css);
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #f5f5f5;
 }
 
 a {
   color: #00B7FF;
+}
+
+.white {
+  background-color: #fff;
+}
+
+.ui.menu.header-menu {
+  border-radius: 0px;
+}
+.ui.menu.header-menu .item.logo {
+  padding-right: 0.5em;
+  -webkit-filter: brightness(0);
+  filter: brightness(0);
+}
+.ui.menu.header-menu .item.logo::before {
+  background-color: transparent;
+}
+.ui.menu.header-menu .item.brand {
+  padding-left: 0.5em;
+  font-size: 20px;
+}
+.ui.menu.header-menu .item.brand:hover {
+  background-color: transparent;
 }
