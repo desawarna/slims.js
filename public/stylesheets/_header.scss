@@ -3,7 +3,7 @@
 // @Email:  ido.alit@gmail.com
 // @Filename: _header.scss
 // @Last modified by:   ido
-// @Last modified time: 2017-07-11T15:23:19+07:00
+// @Last modified time: 2017-07-11T15:50:58+07:00
 
 .ui {
   &.menu.header-menu {
@@ -11,13 +11,16 @@
     border-radius: 0px;
 
     .item {
+
+      &::before {
+        background-color: transparent;
+      }
+
       &.logo {
         padding-right: 0.5em;
         @include filter(brightness(0));
-        &::before {
-          background-color: transparent;
-        }
       }
+
       &.brand {
         padding-left: 0.5em;
         font-size: 20px;

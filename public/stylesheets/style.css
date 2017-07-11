@@ -15,13 +15,13 @@ a {
 .ui.menu.header-menu {
   border-radius: 0px;
 }
+.ui.menu.header-menu .item::before {
+  background-color: transparent;
+}
 .ui.menu.header-menu .item.logo {
   padding-right: 0.5em;
   -webkit-filter: brightness(0);
   filter: brightness(0);
-}
-.ui.menu.header-menu .item.logo::before {
-  background-color: transparent;
 }
 .ui.menu.header-menu .item.brand {
   padding-left: 0.5em;
