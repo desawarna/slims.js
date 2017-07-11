@@ -1,0 +1,22 @@
+{
+  "name": "slims.js",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "app-module-path": "^2.2.0",
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "helmet": "^3.6.1",
+    "morgan": "~1.8.1",
+    "mysql": "^2.13.0",
+    "node-compass": "0.2.3",
+    "passport": "^0.3.2",
+    "pug": "~2.0.0-beta11",
+    "serve-favicon": "~2.4.2"
+  }
+}
