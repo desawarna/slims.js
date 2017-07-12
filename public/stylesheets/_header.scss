@@ -3,7 +3,7 @@
 // @Email:  ido.alit@gmail.com
 // @Filename: _header.scss
 // @Last modified by:   ido
-// @Last modified time: 2017-07-12T14:29:45+07:00
+// @Last modified time: 2017-07-12T15:22:15+07:00
 
 $gradient-start : #ab64f6;
 $gradient-end   : #61dbf7;
@@ -13,6 +13,8 @@ $gradient-end   : #61dbf7;
 
     border-radius: 0px;
     border: none;
+    // @include box-shadow(rgba($gradient-end, 0.15) 0px 1px 50px 0px);
+    box-shadow: none;
 
     .item {
 
@@ -50,7 +52,7 @@ $gradient-end   : #61dbf7;
 
       &.logo {
         padding-right: 0.5em;
-        @include filter(brightness(0));
+        // @include filter(brightness(0));
       }
 
       &.brand {

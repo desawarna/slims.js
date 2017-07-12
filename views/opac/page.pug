@@ -5,7 +5,12 @@ extends layout
 block content
   include header
 
-  .ui.container
-    h1.ui.header #{title}
-    p
-      != desc
+  .ui.container.page
+    .ui.grid
+      .column.ten.wide
+        h1.ui.header #{title}
+        p
+          != desc
+
+      .column.six.wide
+        p info

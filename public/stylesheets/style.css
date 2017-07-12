@@ -1,7 +1,8 @@
 @import url(../semantic/semantic.min.css);
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #f5f5f5;
+  background-color: #fff;
+  color: #7a7a7a;
 }
 
 a {
@@ -15,6 +16,7 @@ a {
 .ui.menu.header-menu {
   border-radius: 0px;
   border: none;
+  box-shadow: none;
 }
 .ui.menu.header-menu .item {
   color: #7a7a7a;
@@ -69,8 +71,6 @@ a {
 }
 .ui.menu.header-menu .item.logo {
   padding-right: 0.5em;
-  -webkit-filter: brightness(0);
-  filter: brightness(0);
 }
 .ui.menu.header-menu .item.brand {
   padding-left: 0.5em;
@@ -88,4 +88,16 @@ a {
 }
 .ui.menu.header-menu .item.brand:hover {
   background-color: transparent;
+}
+
+.page {
+  padding-top: 40px;
+}
+
+.full-wide {
+  width: 100% !important;
+}
+
+.search-form {
+  margin-top: 120px;
 }

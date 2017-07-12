@@ -4,3 +4,14 @@ extends layout
 
 block content
   include header
+
+  .ui.grid.container
+    .column.seven.wide
+      form.search-form(method='POST' action='/search')
+      h1.ui.header SEARCH
+      p start it by typing one or more keywords for title, author or subject 
+      .ui.fluid.search
+        .ui.icon.input.full-wide
+          input.prompt(placeholder='Search collection...', type='text')
+          i.search.icon
+        .results
