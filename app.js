@@ -4,7 +4,7 @@
  * @Email:  ido.alit@gmail.com
  * @Filename: app.js
  * @Last modified by:   ido
- * @Last modified time: 2017-07-11T16:00:54+07:00
+ * @Last modified time: 2017-07-12T12:00:12+07:00
  */
 
 // ----------------------------------------------------------------------------
@@ -23,35 +23,13 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var compass = require('node-compass');
 var helmet = require('helmet');
+var db = require('app/modules/db');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 var api = require('./routes/api/v1');
 
 var app = express();
-
-// ----------------------------------------------------------------------------
-// Database
-// ----------------------------------------------------------------------------
-const Sequelize = require('sequelize')
-const db = new Sequelize('senayandb', 'root', '', {
-  host: 'localhost',
-  dialect: 'mysql',
-
-  pool: {
-    max: 5,
-    min: 0,
-    idle: 1000
-  }
-})
-
-db.authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });
 
 // ----------------------------------------------------------------------------
 // view engine setup

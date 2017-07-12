@@ -4,7 +4,7 @@ nav.ui.stackable.menu.header-menu
   .item.logo
     img(src='/images/logo.png')
   a.item.brand(href='/') SLiMS.js
-  a.item(href='/') Home
-  a.item(href='/page/about') About
-  a.item(href='/page/help') Help
-  a.item(href='/signin') Sign In
+  a.item(class={active: path === undefined} href='/') Home
+  a.item(class={active: path === 'libinfo'} href='/page/libinfo') About
+  a.item(class={active: path === 'help'} href='/page/help') Help
+  a.item(class={active: path === 'signin'} href='/signin') Sign In

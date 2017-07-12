@@ -5,4 +5,7 @@ extends layout
 block content
   include header
 
-  p #{title}
+  .ui.container
+    h1.ui.header #{title}
+    p
+      != desc

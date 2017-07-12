@@ -3,14 +3,46 @@
 // @Email:  ido.alit@gmail.com
 // @Filename: _header.scss
 // @Last modified by:   ido
-// @Last modified time: 2017-07-11T15:50:58+07:00
+// @Last modified time: 2017-07-12T14:29:45+07:00
+
+$gradient-start : #ab64f6;
+$gradient-end   : #61dbf7;
 
 .ui {
   &.menu.header-menu {
 
     border-radius: 0px;
+    border: none;
 
     .item {
+
+      color: #7a7a7a;
+      @include transition(all 0.3s ease-in-out);
+
+      &:hover:not(.brand):not(.logo),
+      &.active {
+        position: relative;
+        @include background(linear-gradient(to right, $gradient-start, $gradient-end));
+        @include background-clip(text);
+        color: transparent;
+
+        &::after {
+          opacity: 1;
+          @include background-image(linear-gradient(to right, $gradient-start, $gradient-end));
+        }
+      }
+
+      &::after {
+        content: " ";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 2px;
+        @include background-image(linear-gradient(to right, $gradient-start, $gradient-end));
+        @include transition(all 0.3s ease-in-out);
+        opacity: 0;
+      }
 
       &::before {
         background-color: transparent;
@@ -24,6 +56,9 @@
       &.brand {
         padding-left: 0.5em;
         font-size: 20px;
+        @include background(linear-gradient(to right, #fd0f77, $gradient-start));
+        @include background-clip(text);
+        color: transparent;
         &:hover {
           background-color: transparent;
         }
