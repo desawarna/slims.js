@@ -3,8 +3,8 @@
  * @Date:   2017-07-11T14:34:40+07:00
  * @Email:  ido.alit@gmail.com
  * @Filename: custom.js
- * @Last modified by:   ido
- * @Last modified time: 2017-07-11T15:09:11+07:00
+ * @Last modified by:   user
+ * @Last modified time: 2017-09-28T18:12:37+07:00
  */
 
 'use strict';
@@ -19,3 +19,8 @@
  //     hide: 300
  //   }
  // });
+
+ $('.ui.sidebar').sidebar({
+     context: $('.bottom.segment')
+   })
+   .sidebar('attach events', '.menu .item.toggle');

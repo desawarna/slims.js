@@ -1,3 +1,14 @@
+/**
+ * @Author: Waris Agung Widodo <user>
+ * @Date:   2017-09-28T09:58:55+07:00
+ * @Email:  ido.alit@gmail.com
+ * @Filename: content.js
+ * @Last modified by:   user
+ * @Last modified time: 2017-09-28T12:09:17+07:00
+ */
+
+
+
 'use strict';
 
 module.exports = function (sequelize, DataTypes) {

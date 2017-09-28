@@ -18,6 +18,10 @@ a {
 }
 
 // import other style
+@import "common";
 @import "header";
 @import "page";
 @import "search";
+@import "login";
+@import "sidebar";
+@import "admin";

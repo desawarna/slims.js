@@ -1,0 +1,90 @@
+// @Author: Waris Agung Widodo <user>
+// @Date:   2017-09-28T18:53:08+07:00
+// @Email:  ido.alit@gmail.com
+// @Filename: _header.scss
+// @Last modified by:   user
+// @Last modified time: 2017-09-28T20:18:38+07:00
+
+$gradient-start : #ab64f6;
+$gradient-end   : #a151f5; //#61dbf7;
+
+.ui.slims {
+  &.header {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+    @include box-shadow(rgba(0,0,0,.15) 0px 2px 5px);
+
+    .item {
+      &.brand {
+        padding-left: 0.5em;
+        font-size: 20px;
+        @include background(linear-gradient(to right, #fd0f77, $gradient-start));
+        @include background-clip(text);
+        color: transparent;
+        &:hover {
+          background-color: transparent;
+        }
+      }
+
+      &:hover {
+        background-color: #fff;
+      }
+
+      img.photo {
+        border-radius: 50%;
+      }
+    }
+
+    .menu.small.text {
+      font-size: 12px;
+    }
+  }
+}
+
+.hamburger {
+  text-align: right;
+  .strip {
+    display: block;
+    background: #999;
+    height: 2px;
+    border-radius: 1px;
+    float: right;
+    clear: both;
+    margin: 2px;
+    position: relative;
+
+    &.one {
+      width: 23px;
+    }
+    &.two {
+      width: 20px;
+      &:before {
+        content: ' ';
+        display: inline-block;
+        height: 2px;
+        width: 4px;
+        background: #999;
+        border-radius: 1px;
+        position: absolute;
+        left: -6px;
+        @include transition-property(all);
+        @include transition-duration(0.3s);
+        @include transition-timing-function(ease-in-out);
+      }
+    }
+    &.three {
+      width: 18px;
+    }
+  }
+
+  &:hover {
+    .strip {
+      &.two {
+        &::before {
+          left: -8px;
+          background: teal;
+        }
+      }
+    }
+  }
+}

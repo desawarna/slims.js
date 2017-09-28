@@ -1,6 +1,9 @@
 extends opac/layout
 
 block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+  include opac/header
+
+  .ui.container
+    h1.ui.header= message
+    h2.ui.header= error.status
+    pre.ui.red.message #{error.stack}

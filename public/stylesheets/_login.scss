@@ -1,0 +1,31 @@
+// @Author: Waris Agung Widodo <user>
+// @Date:   2017-09-28T10:24:12+07:00
+// @Email:  ido.alit@gmail.com
+// @Filename: _login.scss
+// @Last modified by:   user
+// @Last modified time: 2017-09-28T11:28:11+07:00
+
+
+
+.signin {
+  margin-top: 20%;
+}
+
+.illustration {
+  height: 100%;
+  background-color: #ccc;
+  background-image: url('/images/773.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  .copy {
+    color: white;
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 12px;
+    opacity: 0.7
+  }
+}

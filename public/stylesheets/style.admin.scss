@@ -1,0 +1,17 @@
+// @Author: Waris Agung Widodo <user>
+// @Date:   2017-09-28T18:28:42+07:00
+// @Email:  ido.alit@gmail.com
+// @Filename: style.admin.scss
+// @Last modified by:   user
+// @Last modified time: 2017-09-28T20:02:59+07:00
+
+
+
+@import "compass/css3";
+
+// import semantic-UI
+@import "../semantic/semantic.min.css";
+
+// import other style
+@import "admin/common";
+@import "admin/header";
