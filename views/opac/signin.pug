@@ -3,6 +3,41 @@
 extends layout
 
 block content
-  include header
+  .ui.grid.h-100.mb-0.mt-0
+    .six.wide.column.pb-0.pt-0
+      include login_header
 
-  p halaman login
+      .ui.one.column.centered.grid.container
+        .column
+          .signin
+            if message.length > 0
+              .ui.negative.message
+                i.close.icon
+                .header Error
+                p= message
+            |
+            h2.ui.purple.image.header
+              .content
+                | Log-in to your account
+            |
+            form.ui.large.form(action='/signin' method='post')
+              .ui.stacked.segment
+                .field
+                  .ui.left.icon.input
+                    i.user.icon
+                    |
+                    input(type='text', name='username', placeholder='Username')
+                |
+                .field
+                  .ui.left.icon.input
+                    i.lock.icon
+                    |
+                    input(type='password', name='password', placeholder='Password')
+                |
+                button.ui.fluid.large.purple.submit.button(type='submit') Login
+              |
+              .ui.error.message
+
+    .ten.wide.column.pb-0.pt-0
+      div.illustration
+        a.copy(href="http://www.freepik.com") Designed by jcomp / Freepik

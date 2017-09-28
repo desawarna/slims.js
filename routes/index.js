@@ -3,8 +3,8 @@
  * @Date:   2017-07-12T10:00:44+07:00
  * @Email:  ido.alit@gmail.com
  * @Filename: index.js
- * @Last modified by:   ido
- * @Last modified time: 2017-07-12T13:42:07+07:00
+ * @Last modified by:   user
+ * @Last modified time: 2017-09-28T14:18:44+07:00
  */
 
 var express = require('express');
@@ -36,7 +36,7 @@ router.get('/page/:path', function (req, res, next) {
 });
 
 router.get('/signin', function (req, res, next) {
-  res.render('opac/signin', {path: 'signin'});
+  res.render('opac/signin', {path: 'signin', message: req.flash('loginMessage')});
 });
 
 module.exports = router;

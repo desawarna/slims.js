@@ -3,8 +3,8 @@
  * @Date:   2017-07-11T10:07:28+07:00
  * @Email:  ido.alit@gmail.com
  * @Filename: app.js
- * @Last modified by:   ido
- * @Last modified time: 2017-07-12T12:00:12+07:00
+ * @Last modified by:   user
+ * @Last modified time: 2017-09-28T14:54:09+07:00
  */
 
 // ----------------------------------------------------------------------------
@@ -24,6 +24,9 @@ var bodyParser = require('body-parser');
 var compass = require('node-compass');
 var helmet = require('helmet');
 var db = require('app/modules/db');
+var passport = require('passport');
+var flash = require('connect-flash');
+var session = require('express-session');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -40,7 +43,7 @@ app.set('view engine', 'pug');
 // ----------------------------------------------------------------------------
 // uncomment after placing your favicon in /public
 // ----------------------------------------------------------------------------
-// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -50,11 +53,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(helmet());
 
 // ----------------------------------------------------------------------------
+// configuration passport
+// ----------------------------------------------------------------------------
+require('./config/passport')(passport);
+app.use(session({secret: 'inikunciyangsangatrahasiasekali'})) // secure it
+app.use(passport.initialize())
+app.use(passport.session()) // persistent login sessions
+app.use(flash()) // use connect-flash for flash messages stored in session
+
+// ----------------------------------------------------------------------------
 // Registering router
 // ----------------------------------------------------------------------------
 app.use('/', index);
 app.use('/users', users);
 app.use('/api', api);
+app.use('/admin', require('./routes/admin'));
+require('./routes/auth')(app, passport);
 
 // ----------------------------------------------------------------------------
 // catch 404 and forward to error handler
