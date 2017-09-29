@@ -11,8 +11,13 @@ html
   body(class='ui fluid container')
 
     include header
+    .ui.grid.m-0
 
-    block content
+      .three.wide.column
+        include sidebar
+
+      .ten.wide.column
+        block content
 
     script(src='/js/custom.js')
 

@@ -1,7 +1,7 @@
 @import url(../semantic/semantic.min.css);
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #f5f5f5;
+  background-color: #fafafc;
   color: #7a7a7a;
 }
 
@@ -61,12 +61,50 @@ html, body {
   margin-top: 0 !important;
 }
 
+.color.red {
+  color: #db2828;
+}
+.color.teal {
+  color: #00b5ad;
+}
+.color.orange {
+  color: #f2711c;
+}
+.color.yellow {
+  color: #fbbd08;
+}
+.color.olive {
+  color: #b5cc18;
+}
+.color.green {
+  color: #21ba45;
+}
+.color.blue {
+  color: #2185d0;
+}
+.color.violet {
+  color: #6435c9;
+}
+.color.purple {
+  color: #a333c8;
+}
+.color.pink {
+  color: #e03997;
+}
+.color.brown {
+  color: #a5673f;
+}
+.color.grey {
+  color: #767676;
+}
+
 .ui.slims.header {
   background-color: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   -moz-box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 5px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 5px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 5px;
+  border-radius: 0;
 }
 .ui.slims.header .item.brand {
   padding-left: 0.5em;
@@ -90,6 +128,9 @@ html, body {
 }
 .ui.slims.header .item img.photo {
   border-radius: 50%;
+}
+.ui.slims.header .item .prompt.square {
+  border-radius: 0;
 }
 .ui.slims.header .menu.small.text {
   font-size: 12px;

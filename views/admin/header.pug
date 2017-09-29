@@ -1,13 +1,18 @@
 //- admin/header.pug
 
-.slims.header.ui.menu.borderless.top.fixed
+.slims.header.ui.menu.borderless
   a.item.pr-0(href='/admin')
     img(src='/images/logo.png')
   .item.brand
     | SLiMS.js
 
   .right.menu.small.text
-    .item My Account
+    .ui.category.search.item
+      .ui.transparent.icon.input
+        input.prompt.square(type="text", placeholder="Search...")
+        i.search.link.icon
+      .results
+    .item #{user.name}
     .item
       img.photo(src='/images/elliot.jpg')
     .item

@@ -3,7 +3,7 @@
 // @Email:  ido.alit@gmail.com
 // @Filename: _header.scss
 // @Last modified by:   user
-// @Last modified time: 2017-09-28T20:18:38+07:00
+// @Last modified time: 2017-09-29T08:58:58+07:00
 
 $gradient-start : #ab64f6;
 $gradient-end   : #a151f5; //#61dbf7;
@@ -13,6 +13,7 @@ $gradient-end   : #a151f5; //#61dbf7;
     background-color: #fff;
     border-bottom: 1px solid rgba(0,0,0,.2);
     @include box-shadow(rgba(0,0,0,.15) 0px 2px 5px);
+    border-radius: 0;
 
     .item {
       &.brand {
@@ -32,6 +33,10 @@ $gradient-end   : #a151f5; //#61dbf7;
 
       img.photo {
         border-radius: 50%;
+      }
+
+      .prompt.square {
+        border-radius: 0;
       }
     }
 
