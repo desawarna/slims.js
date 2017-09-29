@@ -4,7 +4,7 @@
  * @Email:  ido.alit@gmail.com
  * @Filename: app.js
  * @Last modified by:   user
- * @Last modified time: 2017-09-28T14:54:09+07:00
+ * @Last modified time: 2017-09-29T14:26:50+07:00
  */
 
 // ----------------------------------------------------------------------------
@@ -30,7 +30,6 @@ var session = require('express-session');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var api = require('./routes/api/v1');
 
 var app = express();
 
@@ -47,6 +46,7 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json()) // parse application/json
 app.use(cookieParser());
 app.use(compass({ mode: 'expanded' }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -66,7 +66,7 @@ app.use(flash()) // use connect-flash for flash messages stored in session
 // ----------------------------------------------------------------------------
 app.use('/', index);
 app.use('/users', users);
-app.use('/api', api);
+app.use('/api', require('./routes/api/v1/index')(passport));
 app.use('/admin', require('./routes/admin'));
 require('./routes/auth')(app, passport);
 

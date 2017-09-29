@@ -4,15 +4,20 @@
  * @Email:  ido.alit@gmail.com
  * @Filename: passport.js
  * @Last modified by:   user
- * @Last modified time: 2017-09-28T14:50:47+07:00
+ * @Last modified time: 2017-09-29T16:31:25+07:00
  */
 
 
 
 const LocalStrategy = require('passport-local').Strategy;
+const CustomStrategy = require('passport-custom').Strategy;
 const db = require('app/modules/db');
 const User = require('app/models/user')(db.connection, db.Sequelize);
 const bcrypt = require('bcrypt');
+
+var Jwt = require('jsonwebtoken');
+var unserialize = require("php-serialization").unserialize;
+var privateKey = '37LvDSm4XvjYOh9Y';
 
 module.exports = function (passport) {
   // --------------------------------------------------------------------------
@@ -71,4 +76,51 @@ module.exports = function (passport) {
       })
     }
   ))
+
+  // --------------------------------------------------------------------------
+  // configuration for jwt token
+  // --------------------------------------------------------------------------
+  passport.use('jwt-login', new CustomStrategy(
+    function (req, callback) {
+      var username = req.body.username
+      var password = req.body.password
+      User.findOne({
+        where:{username:username},
+        attributes: [['user_id', 'id'], 'passwd', ['user_type', 'type'], 'groups',
+                    ['realname', 'name'], ['user_image', 'image']]
+      }).then(user => {
+        // user not found
+        if (!user) {
+          return callback(null, false, {message:"no such user found"});
+        }
+
+        // verify password
+        var passwordHash = user.get('passwd').replace(/^\$2y(.+)$/i, '\$2a$1');
+
+        bcrypt.compare(password, passwordHash, function(err, res) {
+          if (!res) {
+            return callback(null, false, {message:"password not match"});
+          }
+
+          console.log("==================");
+          console.log(unserialize(user.get('groups'))[0]);
+          console.log("==================");
+
+          var tokenData = {
+              username: username,
+              scope: unserialize(user.get('groups')),
+              id: user.get('id')
+          };
+          var result = {
+              username: username,
+              scope: unserialize(user.get('groups')),
+              token: Jwt.sign(tokenData, privateKey)
+          };
+
+          return callback(null, result);
+        });
+      })
+    }
+  ))
+
 }
