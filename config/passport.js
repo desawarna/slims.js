@@ -4,7 +4,7 @@
  * @Email:  ido.alit@gmail.com
  * @Filename: passport.js
  * @Last modified by:   user
- * @Last modified time: 2017-09-29T16:31:25+07:00
+ * @Last modified time: 2017-09-30T11:19:28+07:00
  */
 
 
@@ -16,7 +16,7 @@ const User = require('app/models/user')(db.connection, db.Sequelize);
 const bcrypt = require('bcrypt');
 
 var Jwt = require('jsonwebtoken');
-var unserialize = require("php-serialization").unserialize;
+var unserialize = require('php-unserialize').unserialize;
 var privateKey = '37LvDSm4XvjYOh9Y';
 
 module.exports = function (passport) {
@@ -102,23 +102,39 @@ module.exports = function (passport) {
             return callback(null, false, {message:"password not match"});
           }
 
-          console.log("==================");
-          console.log(unserialize(user.get('groups'))[0]);
-          console.log("==================");
+          var groups = unserialize(user.get('groups'))
 
           var tokenData = {
               username: username,
-              scope: unserialize(user.get('groups')),
+              scope: groups,
               id: user.get('id')
           };
           var result = {
               username: username,
-              scope: unserialize(user.get('groups')),
+              scope: groups,
               token: Jwt.sign(tokenData, privateKey)
           };
 
           return callback(null, result);
         });
+      })
+    }
+  ))
+
+  passport.use('jwt-token', new CustomStrategy(
+    function (req, callback) {
+      // verify token
+      var token = req.get('Authorization') || req.params.token
+      if (!token) {
+        return callback('Token not found')
+      }
+
+      Jwt.verify(token, privateKey, (err, decoded) => {
+        if (err) {
+          return callback(null, false)
+        }
+
+        return callback(null, decoded)
       })
     }
   ))

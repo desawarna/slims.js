@@ -4,7 +4,7 @@
  * @Email:  ido.alit@gmail.com
  * @Filename: app.js
  * @Last modified by:   user
- * @Last modified time: 2017-09-29T14:26:50+07:00
+ * @Last modified time: 2017-09-30T11:50:13+07:00
  */
 
 // ----------------------------------------------------------------------------
@@ -62,13 +62,17 @@ app.use(passport.session()) // persistent login sessions
 app.use(flash()) // use connect-flash for flash messages stored in session
 
 // ----------------------------------------------------------------------------
-// Registering router
+// Registering routes
 // ----------------------------------------------------------------------------
+require('./routes/auth')(app, passport);
 app.use('/', index);
 app.use('/users', users);
-app.use('/api', require('./routes/api/v1/index')(passport));
 app.use('/admin', require('./routes/admin'));
-require('./routes/auth')(app, passport);
+// Registering API routes
+app.use('/api', require('./routes/api/v1/index')(passport));
+app.use('/api/auth', require('./routes/api/v1/auth')(passport));
+app.use('/api/profile', require('./routes/api/v1/profile')(passport));
+app.use('/api/loan', require('./routes/api/v1/loan')(passport));
 
 // ----------------------------------------------------------------------------
 // catch 404 and forward to error handler
