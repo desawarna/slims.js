@@ -1,0 +1,53 @@
+// @Author: Waris Agung Widodo <user>
+// @Date:   2017-10-01T17:12:20+07:00
+// @Email:  ido.alit@gmail.com
+// @Filename: gradient.scss
+// @Last modified by:   user
+// @Last modified time: 2017-10-01T20:13:29+07:00
+
+$orange: #FF8758;
+$pink: #FF64AD;
+$purple: #F06BEB;
+$deep-purple: #8E6CF1;
+$blue: #009AD4;
+$green: #2ED2BE;
+
+.gradient {
+  color: white;
+  &.orange {
+    &.-pink {
+      @include background-image(linear-gradient(left, $orange, $pink));
+      box-shadow: 0 2px 10px rgba($pink, .5) !important;
+    }
+  }
+
+  &.deep-purple {
+    &.-blue {
+      @include background-image(linear-gradient(left, $deep-purple, $blue));
+      box-shadow: 0 3px 10px rgba($deep-purple, .5) !important;
+    }
+  }
+
+  &.purple {
+    &.-deep-purple {
+      @include background-image(linear-gradient(left, $purple, $deep-purple));
+      box-shadow: 0 3px 10px rgba($purple, .5) !important;
+    }
+  }
+
+  &.green {
+    &.-blue {
+      @include background-image(linear-gradient(left, $green, $blue));
+      box-shadow: 0 3px 10px rgba($green, .5) !important;
+    }
+  }
+}
+
+.ui.cards > .card.gradient {
+  border-radius: 3px;
+}
+
+.ui.cards > .card.gradient,
+.ui.cards > .card.gradient:hover {
+  box-shadow: none;
+}

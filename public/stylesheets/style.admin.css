@@ -184,3 +184,80 @@ html, body {
   left: -8px;
   background: teal;
 }
+
+.gradient {
+  color: white;
+}
+.gradient.orange.-pink {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmODc1OCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmNjRhZCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #ff8758), color-stop(100%, #ff64ad));
+  background-image: -moz-linear-gradient(left, #ff8758, #ff64ad);
+  background-image: -webkit-linear-gradient(left, #ff8758, #ff64ad);
+  background-image: linear-gradient(to right, #ff8758, #ff64ad);
+  box-shadow: 0 2px 10px rgba(255, 100, 173, 0.5) !important;
+}
+.gradient.deep-purple.-blue {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzhlNmNmMSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwOWFkNCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #8e6cf1), color-stop(100%, #009ad4));
+  background-image: -moz-linear-gradient(left, #8e6cf1, #009ad4);
+  background-image: -webkit-linear-gradient(left, #8e6cf1, #009ad4);
+  background-image: linear-gradient(to right, #8e6cf1, #009ad4);
+  box-shadow: 0 3px 10px rgba(142, 108, 241, 0.5) !important;
+}
+.gradient.purple.-deep-purple {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2YwNmJlYiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzhlNmNmMSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #f06beb), color-stop(100%, #8e6cf1));
+  background-image: -moz-linear-gradient(left, #f06beb, #8e6cf1);
+  background-image: -webkit-linear-gradient(left, #f06beb, #8e6cf1);
+  background-image: linear-gradient(to right, #f06beb, #8e6cf1);
+  box-shadow: 0 3px 10px rgba(240, 107, 235, 0.5) !important;
+}
+.gradient.green.-blue {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzJlZDJiZSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwOWFkNCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #2ed2be), color-stop(100%, #009ad4));
+  background-image: -moz-linear-gradient(left, #2ed2be, #009ad4);
+  background-image: -webkit-linear-gradient(left, #2ed2be, #009ad4);
+  background-image: linear-gradient(to right, #2ed2be, #009ad4);
+  box-shadow: 0 3px 10px rgba(46, 210, 190, 0.5) !important;
+}
+
+.ui.cards > .card.gradient {
+  border-radius: 3px;
+}
+
+.ui.cards > .card.gradient,
+.ui.cards > .card.gradient:hover {
+  box-shadow: none;
+}
+
+.card.gradient {
+  overflow: hidden;
+}
+.card.gradient .content .header {
+  color: white;
+}
+.card.gradient .content .title {
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+.card.gradient .content .value {
+  font-size: 32px;
+}
+.card.gradient .content .sub {
+  margin-top: 6px;
+  font-size: 10px;
+}
+.card.gradient .illustration {
+  position: absolute;
+  right: -30px;
+  bottom: -20px;
+  opacity: .3;
+}
+.card.gradient .illustration .icon {
+  font-size: 102px;
+}

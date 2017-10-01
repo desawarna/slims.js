@@ -1,0 +1,43 @@
+// @Author: Waris Agung Widodo <user>
+// @Date:   2017-10-01T18:53:51+07:00
+// @Email:  ido.alit@gmail.com
+// @Filename: _dashboard.scss
+// @Last modified by:   user
+// @Last modified time: 2017-10-01T23:20:47+07:00
+
+
+
+.card {
+  &.gradient {
+    overflow: hidden;
+
+    .content {
+      .header {
+        color: white;
+      }
+      .title {
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        font-size: 10px;
+      }
+      .value {
+        font-size: 32px;
+      }
+      .sub {
+        margin-top: 6px;
+        font-size: 10px;
+      }
+    }
+
+    .illustration {
+      position: absolute;
+      right: -30px;
+      bottom: -20px;
+      opacity: .3;
+
+      .icon {
+        font-size: 102px;
+      }
+    }
+  }
+}

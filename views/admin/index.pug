@@ -4,4 +4,72 @@ extends layout
 
 block content
     h1.ui.header Summary
-        .sub.header Welcome in SLiMS.js
+    .ui.grid.three.column
+      .column
+        .ui.card.fluid.gradient.orange.-pink
+          .content
+            .title Bibliographi
+            .value 123.456
+            .sub
+              span 14 new
+                i.long.arrow.up.icon
+          .illustration
+            i.book.icon
+      .column
+        .ui.card.fluid.gradient.deep-purple.-blue
+          .content
+            .title Trash
+            .value 573
+            .sub
+              span 4 new
+                i.long.arrow.up.icon
+          .illustration
+            i.trash.outline.icon
+      .column
+        .ui.card.fluid.gradient.green.-blue
+          .content
+            .title Repository
+            .value 23.779
+            .sub
+              span 8 new
+                i.long.arrow.up.icon
+          .illustration
+            i.file.pdf.outline.icon
+
+    .ui.grid
+      .eight.wide.column
+        table.ui.table
+          thead
+            tr
+              th Food
+              th Calories
+              th Protein
+          tbody
+            tr
+              td Apple
+              td 200
+              td 0g
+            tr
+              td orange
+              td 310
+              td 0g
+
+      .eight.wide.column
+        table.ui.table
+          thead
+            tr
+              th Food
+              th Calories
+              th Protein
+          tbody
+            tr
+              td Apple
+              td 200
+              td 0g
+            tr
+              td orange
+              td 310
+              td 0g
+
+    .ui.grid
+      #app.column
