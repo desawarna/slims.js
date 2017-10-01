@@ -3,16 +3,17 @@
  * @Date:   2017-07-12T09:58:23+07:00
  * @Email:  ido.alit@gmail.com
  * @Filename: db.js
- * @Last modified by:   ido
- * @Last modified time: 2017-07-12T11:54:53+07:00
+ * @Last modified by:   user
+ * @Last modified time: 2017-10-01T23:01:48+07:00
  */
 
  // ----------------------------------------------------------------------------
  // Database
  // ----------------------------------------------------------------------------
+ const cf = require(__dirname + './../../config/database');
  const Sequelize = require('sequelize')
- const db = new Sequelize('senayandb', 'root', '', {
-   host: 'localhost',
+ const db = new Sequelize(cf.name, cf.user, cf.password, {
+   host: cf.host,
    dialect: 'mysql',
 
    pool: {
