@@ -33,3 +33,5 @@ npm-debug.log
 public/.sass-cache
 
 .DS_Store
+
+config/*
