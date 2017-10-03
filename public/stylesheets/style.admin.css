@@ -252,6 +252,12 @@ html, body {
   margin-top: 6px;
   font-size: 10px;
 }
+.card.gradient .content .sub span {
+  margin-right: 8px;
+}
+.card.gradient .content .sub span .icon {
+  margin-left: 2px;
+}
 .card.gradient .illustration {
   position: absolute;
   right: -30px;

@@ -2,8 +2,8 @@
 // @Date:   2017-10-01T18:53:51+07:00
 // @Email:  ido.alit@gmail.com
 // @Filename: _dashboard.scss
-// @Last modified by:   user
-// @Last modified time: 2017-10-01T23:20:47+07:00
+// @Last modified by:   ido
+// @Last modified time: 2017-10-03T10:29:51+07:00
 
 
 
@@ -26,6 +26,14 @@
       .sub {
         margin-top: 6px;
         font-size: 10px;
+
+        span {
+          margin-right: 8px;
+
+          .icon {
+            margin-left: 2px;
+          }
+        }
       }
     }
 

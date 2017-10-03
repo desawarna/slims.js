@@ -3,8 +3,8 @@
  * @Date:   2017-07-11T10:07:28+07:00
  * @Email:  ido.alit@gmail.com
  * @Filename: app.js
- * @Last modified by:   user
- * @Last modified time: 2017-09-30T11:50:13+07:00
+ * @Last modified by:   ido
+ * @Last modified time: 2017-10-02T15:33:47+07:00
  */
 
 // ----------------------------------------------------------------------------
@@ -73,6 +73,7 @@ app.use('/api', require('./routes/api/v1/index')(passport));
 app.use('/api/auth', require('./routes/api/v1/auth')(passport));
 app.use('/api/profile', require('./routes/api/v1/profile')(passport));
 app.use('/api/loan', require('./routes/api/v1/loan')(passport));
+app.use('/api/biblio', require('./routes/api/v1/biblio')(passport));
 
 // ----------------------------------------------------------------------------
 // catch 404 and forward to error handler
