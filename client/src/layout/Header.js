@@ -4,7 +4,7 @@
  * @Email:  ido.alit@gmail.com
  * @Filename: Header.js
  * @Last modified by:   ido
- * @Last modified time: 2017-10-03T11:58:40+07:00
+ * @Last modified time: 2017-10-03T13:21:48+07:00
  */
 
 import React from 'react';
@@ -21,7 +21,7 @@ export default class Header extends React.Component {
             </div>
             <div className="results"></div>
           </div>
-          <div className="item">Waris</div>
+          <div className="item">Waris Agung Widodo</div>
           <div className="item"><img src="/images/elliot.jpg" alt="elliot.jpg" className="photo"/></div>
           <div className="item">
             <div className="hamburger">

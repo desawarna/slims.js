@@ -29,11 +29,19 @@ Install dependecies
 ```
 $ cd slims.js
 $ npm install
+$ cd client && npm install && cd ../
 ```
 
-Run app
+Run API server
 
 ```
+$ npm start
+```
+
+Open new terminal for run client App, and run App
+
+```
+$ cd slims_js_project_directory/client 
 $ npm start
 ```
 

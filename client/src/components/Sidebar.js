@@ -4,10 +4,11 @@
  * @Email:  ido.alit@gmail.com
  * @Filename: sidebar.js
  * @Last modified by:   ido
- * @Last modified time: 2017-10-03T11:51:27+07:00
+ * @Last modified time: 2017-10-03T13:32:09+07:00
  */
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class Sidebar extends React.Component {
 
@@ -17,7 +18,7 @@ export default class Sidebar extends React.Component {
         <div className="item">
           <div className="header color blue"><i className="dashboard icon"></i>Dashboard</div>
           <div className="menu">
-            <a className="item">Bibliography</a>
+            <Link className="item" to="/">Bibliography</Link>
             <a className="item">Circulation</a>
             <a className="item">Membership</a>
           </div>
@@ -35,7 +36,7 @@ export default class Sidebar extends React.Component {
         <div className="item">
           <div className="header color yellow"><i className="shop icon"></i>Circulation</div>
           <div className="menu">
-            <a className="item">Loan Report</a>
+            <Link className="item" to="/loan-report">Loan Report</Link>
             <a className="item">Loans by Classification</a>
             <a className="item">Loan List by Member</a>
             <a className="item">Loan History</a>

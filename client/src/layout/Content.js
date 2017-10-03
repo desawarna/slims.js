@@ -4,13 +4,15 @@
  * @Email:  ido.alit@gmail.com
  * @Filename: Content.js
  * @Last modified by:   ido
- * @Last modified time: 2017-10-03T11:51:23+07:00
+ * @Last modified time: 2017-10-03T13:17:56+07:00
  */
 
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 
 import Sidebar from '../components/Sidebar';
 import Dashboard from './Dashboard';
+import LoanReport from '../pages/loan-report';
 
 export default class Content extends React.Component {
 
@@ -21,7 +23,10 @@ export default class Content extends React.Component {
           <Sidebar />
         </div>
         <div className="thirteen wide column">
-          <Dashboard />
+          <Switch>
+            <Route exact path="/" component={Dashboard}></Route>
+            <Route path="/loan-report" component={LoanReport}></Route>
+          </Switch>
         </div>
       </div>
     )
