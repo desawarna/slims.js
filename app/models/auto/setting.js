@@ -18,6 +18,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     }
   }, {
-    tableName: 'setting'
+    tableName: 'setting',
+    timestamps: false
   });
 };

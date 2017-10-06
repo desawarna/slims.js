@@ -3,8 +3,8 @@
  * @Date:   2017-10-02T14:12:13+07:00
  * @Email:  ido.alit@gmail.com
  * @Filename: sidebar.js
- * @Last modified by:   ido
- * @Last modified time: 2017-10-03T13:32:09+07:00
+ * @Last modified by:   user
+ * @Last modified time: 2017-10-04T12:18:57+07:00
  */
 
 import React from 'react';
@@ -30,6 +30,7 @@ export default class Sidebar extends React.Component {
             <a className="item">Title List</a>
             <a className="item">Item Title List</a>
             <a className="item">Items Usage Statistics</a>
+            <Link className="item" to="/item-out">Checkout Items</Link>
             <a className="item">Custom Recapitulation</a>
           </div>
         </div>

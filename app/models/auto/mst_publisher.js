@@ -22,6 +22,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     }
   }, {
-    tableName: 'mst_publisher'
+    tableName: 'mst_publisher',
+    timestamps: false
   });
 };

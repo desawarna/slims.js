@@ -30,6 +30,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   }, {
-    tableName: 'system_log'
+    tableName: 'system_log',
+    timestamps: false
   });
 };

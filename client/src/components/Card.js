@@ -3,17 +3,14 @@
  * @Date:   2017-10-02T14:40:06+07:00
  * @Email:  ido.alit@gmail.com
  * @Filename: Card.js
- * @Last modified by:   ido
- * @Last modified time: 2017-10-03T12:02:43+07:00
+ * @Last modified by:   user
+ * @Last modified time: 2017-10-04T12:16:42+07:00
  */
 
 import React from 'react';
 import Sub from './Card/Sub';
 
 export default class Card extends React.Component {
-  constructor() {
-    super()
-  }
 
   render(){
     var data = this.props.data

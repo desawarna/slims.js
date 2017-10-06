@@ -125,6 +125,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     }
   }, {
-    tableName: 'biblio'
+    tableName: 'biblio',
+    timestamps: false
   });
 };

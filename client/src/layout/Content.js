@@ -3,8 +3,8 @@
  * @Date:   2017-10-02T13:59:29+07:00
  * @Email:  ido.alit@gmail.com
  * @Filename: Content.js
- * @Last modified by:   ido
- * @Last modified time: 2017-10-03T13:17:56+07:00
+ * @Last modified by:   user
+ * @Last modified time: 2017-10-04T12:20:34+07:00
  */
 
 import React from 'react';
@@ -13,6 +13,7 @@ import { Switch, Route } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import Dashboard from './Dashboard';
 import LoanReport from '../pages/loan-report';
+import ItemOut from '../pages/item-out';
 
 export default class Content extends React.Component {
 
@@ -26,6 +27,7 @@ export default class Content extends React.Component {
           <Switch>
             <Route exact path="/" component={Dashboard}></Route>
             <Route path="/loan-report" component={LoanReport}></Route>
+            <Route path="/item-out" component={ItemOut}></Route>
           </Switch>
         </div>
       </div>

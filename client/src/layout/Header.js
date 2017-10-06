@@ -3,8 +3,8 @@
  * @Date:   2017-10-02T13:48:03+07:00
  * @Email:  ido.alit@gmail.com
  * @Filename: Header.js
- * @Last modified by:   ido
- * @Last modified time: 2017-10-03T13:21:48+07:00
+ * @Last modified by:   user
+ * @Last modified time: 2017-10-04T14:48:53+07:00
  */
 
 import React from 'react';

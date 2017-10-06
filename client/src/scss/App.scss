@@ -2,8 +2,17 @@
 // @Date:   2017-10-03T09:39:46+07:00
 // @Email:  ido.alit@gmail.com
 // @Filename: App.scss
-// @Last modified by:   ido
-// @Last modified time: 2017-10-03T09:39:46+07:00
+// @Last modified by:   user
+// @Last modified time: 2017-10-04T18:01:18+07:00
 
 
 
+.ui {
+  &.input {
+    .react-datepicker__input-container {
+      input {
+        min-width: 220px;
+      }
+    }
+  }
+}
