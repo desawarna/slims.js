@@ -34,6 +34,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     }
   }, {
-    tableName: 'mst_author'
+    tableName: 'mst_author',
+    timestamps: false
   });
 };

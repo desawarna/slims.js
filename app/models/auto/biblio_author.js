@@ -20,6 +20,7 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: '1'
     }
   }, {
-    tableName: 'biblio_author'
+    tableName: 'biblio_author',
+    timestamps: false
   });
 };

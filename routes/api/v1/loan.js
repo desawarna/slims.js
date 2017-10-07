@@ -4,7 +4,7 @@
  * @Email:  ido.alit@gmail.com
  * @Filename: loan.js
  * @Last modified by:   user
- * @Last modified time: 2017-10-06T10:21:32+07:00
+ * @Last modified time: 2017-10-07T20:28:50+07:00
  */
 
 
@@ -16,18 +16,20 @@ const db = require('app/modules/db');
 const Loan = require('app/models/auto/loan')(db.connection, db.Sequelize);
 const Item = require('app/models/auto/item')(db.connection, db.Sequelize);
 const Biblio = require('app/models/auto/biblio')(db.connection, db.Sequelize);
+const BiblioAuthor = require('app/models/auto/biblio_author')(db.connection, db.Sequelize);
+const Author = require('app/models/auto/mst_author')(db.connection, db.Sequelize);
 const Publisher = require('app/models/auto/mst_publisher')(db.connection, db.Sequelize);
 const SystemLog = require('app/models/auto/system_log')(db.connection, db.Sequelize);
 const date = require('app/modules/date');
 
 // ----------------------------------------------------------------------------
-// Loan.belongsToMany(Biblio, { through: 'item', foreignKey: 'item_code', otherKey: 'biblio_id' })
-// Biblio.belongsToMany(Loan, { through: 'item', foreignKey: 'biblio_id', otherKey: 'item_code' })
-
+// Create assosiation loan-item-biblio; biblio-mst_publisher
 Loan.belongsTo(Item, {foreignKey: 'item_code', targetKey: 'item_code'})
 Item.belongsTo(Biblio, {foreignKey: 'biblio_id', targetKey: 'biblio_id'})
 Biblio.belongsTo(Publisher, {foreignKey: 'publisher_id'})
-
+// Create assosiation biblio-biblio_author-mst_author
+Biblio.hasMany(BiblioAuthor, {foreignKey: 'biblio_id'})
+BiblioAuthor.belongsTo(Author, {foreignKey: 'author_id', targetKey: 'author_id'})
 
 module.exports = function (passport) {
 
@@ -133,14 +135,26 @@ module.exports = function (passport) {
 
           promises.push(
             Promise.all([
-              Item.findOne({where: {item_code: itemCode}, include: [Biblio]})
-            ]).spread((item)=>{
-              var biblio = [], B = item.get('biblio')
+              Item.findOne({where: {item_code: itemCode}, include: [{
+                model: Biblio,
+                include: [{
+                  model: BiblioAuthor,
+                  include: [Author]
+                }, Publisher]
+              }]})
+            ]).spread((item)=> {
+              var authors = '', biblio = [], B = item.get('biblio'), publisher = ''
+              B.biblio_authors.forEach(author => {
+                authors += author.get('mst_author').author_name + '; '
+              })
+              if (B.mst_publisher) {
+                publisher = B.mst_publisher.publisher_name
+              }
               biblio.push(n++)
               biblio.push(item.get('item_code'))
               biblio.push(B.get('title'))
-              biblio.push('pengarang')
-              biblio.push('penerbit')
+              biblio.push(authors)
+              biblio.push(publisher)
               biblio.push(B.get('publish_year'))
               return biblio
             })
