@@ -27,6 +27,7 @@
     "php-serialization": "0.0.4",
     "php-unserialize": "0.0.1",
     "pug": "~2.0.0-beta11",
+    "react-datepicker": "^0.55.0",
     "sequelize": "^4.3.0",
     "serve-favicon": "~2.4.2",
     "xlsx": "^0.11.5"

@@ -4,7 +4,7 @@
  * @Email:  ido.alit@gmail.com
  * @Filename: FilterBar.js
  * @Last modified by:   user
- * @Last modified time: 2017-10-06T00:04:32+07:00
+ * @Last modified time: 2017-10-07T22:28:53+07:00
  */
 
 import React, { Component } from 'react'
@@ -71,6 +71,7 @@ import 'react-datepicker/dist/react-datepicker.css';
     this.updatefilter('end', date.format('YYYY-MM-DD'), (e, v) => this.props.sendData(v))
   }
   handleDownload(e, data){
+    this.props.export(data.value)
     this.updatefilter('download', data.value, (e, v) => this.props.sendData(v))
   }
 
@@ -122,9 +123,9 @@ import 'react-datepicker/dist/react-datepicker.css';
 
         <Dropdown item icon='download'>
          <Dropdown.Menu>
-           <Dropdown.Item value='excel' onClick={this.handleDownload}><Icon name='file excel outline' /> Excel</Dropdown.Item>
+           <Dropdown.Item value='xlsx' onClick={this.handleDownload}><Icon name='file excel outline' /> Excel</Dropdown.Item>
            <Dropdown.Item value='csv' onClick={this.handleDownload}><Icon name='file text outline' /> CSV</Dropdown.Item>
-           <Dropdown.Item value='pdf' onClick={this.handleDownload}><Icon name='file pdf outline' /> PDF</Dropdown.Item>
+           <Dropdown.Item value='ods' onClick={this.handleDownload}><Icon name='file text' /> ODS</Dropdown.Item>
          </Dropdown.Menu>
        </Dropdown>
 
