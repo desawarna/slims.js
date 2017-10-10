@@ -56,7 +56,10 @@ app.use(helmet());
 // configuration passport
 // ----------------------------------------------------------------------------
 require('./config/passport')(passport);
-app.use(session({secret: 'inikunciyangsangatrahasiasekali'})) // secure it
+app.use(session({
+  secret: 'inikunciyangsangatrahasiasekali', 
+  resave: true,
+  saveUninitialized: true})) // secure it
 app.use(passport.initialize())
 app.use(passport.session()) // persistent login sessions
 app.use(flash()) // use connect-flash for flash messages stored in session
